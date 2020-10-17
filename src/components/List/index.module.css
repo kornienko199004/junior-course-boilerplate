@@ -1,0 +1,7 @@
+.goods-list {
+  width: 736px;
+  display: grid;
+  grid-template-columns: repeat(3, 224px);
+  grid-column-gap: 32px;
+  grid-row-gap: 56px;
+}
