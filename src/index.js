@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProductItem from './components/ProductItem/ProductItem';
+import ProductItem from 'school-product-card';
 import Title from './components/Title/Title';
 import List from './components/List/List';
-import data from './products.json';
-import mock from './mock.js';
-
-const productsList = data.map((item, index) => ({ ...item, ...mock[index] }));
+import productsList from './products.json';
 
 const ratingComponent = ({ isFilled }) => {
   return (
@@ -26,21 +23,23 @@ const ratingComponent = ({ isFilled }) => {
 function App() {
   return (
     <div>
-      <Title content="Список товаров" />
+      <Title titleTag="h1" content="Список товаров" />
       <List>
         {productsList.map(item => {
           return (
-            <ProductItem
-              key={item.id}
-              isInStock={item.isInStock}
-              img={item.img}
-              title={item.name}
-              price={item.price}
-              subPriceContent={item.subPriceContent}
-              maxRating={item.maxRating}
-              rating={item.rating}
-              ratingComponent={ratingComponent}
-            ></ProductItem>
+            <li>
+              <ProductItem
+                key={item.id}
+                isInStock={item.isInStock}
+                img={item.img}
+                title={item.name}
+                price={item.price}
+                subPriceContent={item.subPriceContent}
+                maxRating={item.maxRating}
+                rating={item.rating}
+                ratingComponent={ratingComponent}
+              ></ProductItem>
+            </li>
           );
         })}
       </List>
