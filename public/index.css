@@ -16,5 +16,22 @@ code {
 
 #root {
   margin: 0 auto;
-  width: 300px;
+  padding-top: 80px;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.rating-icon {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.rating-icon svg {
+  stroke: #323c48;
+  fill: transparent;
+}
+
+.rating-icon--filled svg {
+  fill: #323c48;
 }
